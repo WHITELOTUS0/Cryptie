@@ -8,26 +8,38 @@
     <title>Cryptie</title>
   </head>
   <style>
+    :root {
+      --app-height: 100%;
+    }
+
     html,
     body {
-      height: 100%;
-      margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      margin: 0;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      height: var(--app-height);
     }
 
     iframe {
-      width: 60vw;
-      min-width: 350px;
+      position: relative;
+      width: 100%;
       height: 100%;
     }
   </style>
   <body>
     <iframe
-    src="https://embed.fixie.ai/agents/bfa5982a-c792-4822-ac2e-e74cc066bce4?debug=1&agentStartsConversation=1"
-    allow="clipboard-write"
+      src="https://embed.fixie.ai/agents/bfa5982a-c792-4822-ac2e-e74cc066bce4?debug=1&agentStartsConversation=1"
+      allow="clipboard-write"
+    />
+    <script>
+      const appHeight = () => {
+        const doc = document.documentElement;
+        doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+      };
+      window.addEventListener("resize", appHeight);
+      appHeight();
+    </script>
   </body>
 </html>
