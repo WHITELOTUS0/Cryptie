@@ -8,9 +8,9 @@
     <title>Cryptie</title>
   </head>
   <style>
-    :root {
+    /*:root {
       --app-height: 100%;
-    }
+    }*/
 
     html,
     body {
@@ -19,7 +19,11 @@
       overflow: hidden;
       width: 100vw;
       height: 100vh;
-      height: var(--app-height);
+      /*height: var(--app-height);*/
+    }
+    body {
+      position: fixed;
+      height: 100%;
     }
 
     iframe {
@@ -32,14 +36,14 @@
     <iframe
       src="https://embed.fixie.ai/agents/bfa5982a-c792-4822-ac2e-e74cc066bce4?debug=1&agentStartsConversation=1"
       allow="clipboard-write"
-    />
-    <script>
+    ></iframe>
+    <!-- <script>
       const appHeight = () => {
         const doc = document.documentElement;
         doc.style.setProperty("--app-height", `${window.innerHeight}px`);
       };
       window.addEventListener("resize", appHeight);
       appHeight();
-    </script>
+    </script> -->
   </body>
 </html>
